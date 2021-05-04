@@ -142,9 +142,11 @@
     
     function savePhoto(){
       localStorage.setItem("camdata", data);
+	    stopAll();
     }
     function loadPhoto(){
       document.getElementById('imageCap').setAttribute('src', localStorage.getItem("camdata"));
+	    stopAll();
     }
 </script>
     <style>
