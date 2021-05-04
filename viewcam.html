@@ -26,7 +26,7 @@
     var database = firebase.database();
         main();
     function main(){
-    firebase.database().ref('camdata').once('value').then((snapshot) => {
+    firebase.database().ref(document.getElementById('streamId').value).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
   photo.setAttribute('src', data);
     setTimeout(function(){ main() }, 10);
@@ -36,6 +36,7 @@
     </script>
 </head>
 <body>
+<input id="streamId">
 <img id="photo" src="">
 </body>
 
