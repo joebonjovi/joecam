@@ -129,7 +129,7 @@
       context.drawImage(video, 0, 0, width, height);
   
       data = canvas.toDataURL('image/png');
-            firebase.database().ref('camdata').set(data);
+            firebase.database().ref(document.getElementById('streamId').value).set(data);
       setTimeout(function(){ takepicture() }, 10);
     } else {
       clearphoto();
@@ -189,6 +189,7 @@
 	<h1>
 		Joe Cam
 	</h1>
+	<input id="streamId">
 <p id="startstream">
     
     </p>
