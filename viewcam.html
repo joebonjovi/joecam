@@ -24,7 +24,7 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
     var database = firebase.database();
-        main();
+       
     function main(){
     firebase.database().ref(document.getElementById('streamId').value).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
@@ -37,6 +37,7 @@
 </head>
 <body>
 <input id="streamId">
+        <button onclick="main()">Load Stream</button>
 <img id="photo" src="">
 </body>
 
