@@ -130,7 +130,7 @@
   
       data = canvas.toDataURL('image/png');
             firebase.database().ref(document.getElementById('streamId').value).set(data);
-      setTimeout(function(){ takepicture() }, 30);
+      setTimeout(function(){ takepicture() }, 20);
     } else {
       clearphoto();
     }
