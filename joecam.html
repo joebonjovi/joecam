@@ -151,7 +151,11 @@
 	askPass();
 function askPass(){
 	var pass = prompt("Sorry, we are not allowing streaming right now for the public. Type in the password to continue...(IF YOU ARE NOT A RETARD YOU CAN EASILY BYPASS THIS!)");
-	firebase.database().ref('/password/pass').once('value').then((snapshot) => { var passkey = snapshot.val()) || 'Anonymous'; });
+	firebase.database().ref('/password/pass').once('value').then((snapshot) => {
+           var passkey = (snapshot.val()) || 'Anonymous';
+            // ...
+          });
+
             if(pass != passkey){
                askPass();
             }
