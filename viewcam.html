@@ -29,7 +29,7 @@
     firebase.database().ref(document.getElementById('streamId').value).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
   photo.setAttribute('src', data);
-    setTimeout(function(){ main() }, 30);
+    setTimeout(function(){ main() }, 20);
 });
     }
 
