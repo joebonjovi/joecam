@@ -57,7 +57,8 @@
   var photo = null;
   var startbutton = null;
   var data;
-
+  var pass;
+	
   function startup() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
@@ -150,9 +151,8 @@
     }
 	askPass();
 function askPass(){
-	
+	pass = prompt("Sorry, we are not allowing streaming right now for the public. Type in the password to continue...(IF YOU ARE NOT A RETARD YOU CAN EASILY BYPASS THIS!)");
 	firebase.database().ref('/password/pass').once('value').then((snapshot) => {
-         var pass = prompt("Sorry, we are not allowing streaming right now for the public. Type in the password to continue...(IF YOU ARE NOT A RETARD YOU CAN EASILY BYPASS THIS!)");
            var passkey = (snapshot.val() && snapshot.val()) || 'Anonymous';
             if(pass != passkey){
                askPass();
