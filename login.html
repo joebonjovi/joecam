@@ -4,7 +4,7 @@
 // create function that triggers when login button clicked
 function login(){
 // set varible to catch input of password
-var passinput = document.getElementById('pass');
+var passinput = document.getElementById('pass').value;
 // set the varible that contains the correct password
 var pass = "1234";
 
@@ -19,8 +19,8 @@ if(passinput = pass){
 }else{
   // tell the user password is wrong
   alert('wrong password');
-  // recall the login function to start over
-  login();
+ // stop all
+   return false;
 }
     
 }
