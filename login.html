@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+// create function that triggers when login button clicked
+function login(){
+// set varible to catch input of password
+var passinput = document.getElementById('pass');
+// set the varible that contains the correct password
+var pass = "1234";
+
+// check if pass is correct
+if(passinput = pass){
+   // let the user know the password is correct
+   alert('correct password');
+   // set location to correct webpage
+   window.location = "http://www.jgltechnologies.com/";
+    
+ //if the password is anything other then "1234"
+}else{
+  // tell the user password is wrong
+  alert('wrong password');
+  // recall the login function to start over
+  login();
+}
+    
+}
+</script>
+</head>
+<body>
+<p id="wpass"></p>
+Password: <input id="pass" type="password">
+<button onclick="login()">Login</button>
+</body>
+</html>
