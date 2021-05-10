@@ -8,19 +8,19 @@ var passinput = document.getElementById('pass').value;
 // set the varible that contains the correct password
 var pass = "1234";
 
-// check if pass is correct
-if(passinput = pass){
-   // let the user know the password is correct
-   alert('correct password');
-   // set location to correct webpage
-   window.location = "http://www.jgltechnologies.com/";
+// check if pass is wrong
+if(passinput != pass){
+   // let the user know the password is wrong
+   alert('wrong password');
+   // stop all
+   return false;
     
- //if the password is anything other then "1234"
+ //if the password is correct
 }else{
   // tell the user password is wrong
-  alert('wrong password');
- // stop all
-   return false;
+  alert('correct password');
+  // go to correct webpage
+  window.location = "http://www.jgltechnologies.com/";
 }
     
 }
