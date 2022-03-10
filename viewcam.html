@@ -28,14 +28,11 @@
     
     function main(){
      username = document.getElementById('streamId').value;
-     data();
-     function data(){
     firebase.database().ref(username).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
   photo.setAttribute('src', data);
-    data();
+   setTimeout(function(){main()}, 20);
 });
- }
 }
 
     </script>
