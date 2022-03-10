@@ -24,10 +24,11 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
     var database = firebase.database();
-       
+    var username = document.getElementById('streamId').value;
     function main(){
-    firebase.database().ref(document.getElementById('streamId').value).once('value').then((snapshot) => {
+    firebase.database().ref(username).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
+  if(data == null){return;}
   photo.setAttribute('src', data);
     setTimeout(function(){ main() }, 20);
 });
