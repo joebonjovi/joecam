@@ -33,7 +33,7 @@
     firebase.database().ref(username).once('value').then((snapshot) => {
   var data = (snapshot.val() && snapshot.val()) || 'Anonymous';
   photo.setAttribute('src', data);
-    setTimeout(function(){ data() }, 20);
+    data();
 });
  }
 }
